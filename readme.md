@@ -2,6 +2,12 @@
 ## Introduction
 The rapid advancement of artificial intelligence (AI) has led to the development of various chatbots that can converse with humans. However, most existing chatbots are limited in their capabilities, only able to answer questions or provide information within a specific domain or cost money to use. In this article, we will show you how to build an AI chatbot that not only answers questions but also generates images using the stable diffusion model and provides a RAG module to question you documents.
 
+𝐃𝐞𝐦𝐨 𝐕𝐢𝐝𝐞𝐨: 𝐡𝐭𝐭𝐩𝐬://𝐝𝐫𝐢𝐯𝐞.𝐠𝐨𝐨𝐠𝐥𝐞.𝐜𝐨𝐦/𝐟𝐢𝐥𝐞/𝐝/𝟏𝐩𝟑𝐱𝐃𝐒𝐔𝐱𝐢𝐰𝐌𝐬𝐌𝐞𝐔𝐳𝐗𝐊𝐭𝐖_𝐬𝐳𝐡𝐤𝟖𝐤𝟏𝟕𝐈𝐟𝐀𝐓/𝐯𝐢𝐞𝐰?𝐮𝐬𝐩=𝐬𝐡𝐚𝐫𝐢𝐧𝐠
+
+
+![Screenshot 2025-05-04 200945](https://github.com/user-attachments/assets/283eec65-5ca2-4db8-98a7-497efbff8dcd)
+
+
 ![pipeline](images/pipeline.png)
 
 Our project is based on a combination of several AI technologies, including Ollama, Langchain, Streamlit, LLaMA3, and Stable Diffusion Model. The chatbot is designed to be multimodal, meaning it can interact with users through text-based conversations, image generation, and PDF file analysis. Our solution is free and totally on device which is useful when working with critical documents that you wouldn’t want to share.
@@ -249,40 +255,9 @@ self.db.persist()
 
 When asking the chatbot for information within the PDF we will search inside the DB for relevant data. If we asked a regular question then we will use the similarity search module and recover the top 5 chunks to help answer the question.
 
-```py
-# Search the DB for 5 closest chunks of data
-results = self.db.similarity_search_with_score(question, k=5)
-context = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
-```
 
-If we want a full resume of the PDF file, we will return all chunks of data to be used as context for the LLM. 
 
-```py
-# get all the chunks
-results = self.db.get()
-context = "\n\n---\n\n".join(results["documents"])   
-```
 
-#### The image generation
-The generation of images is managed inside the *img_gen.py* file. We load our model from the HuggingFace library and initialize it onto the GPU. We also set the scheduler.
-
-```py
-import torch
-from diffusers import StableDiffusionPipeline, DPMSolverMultistepScheduler
-# Initialize the Stable Diffusion model
-model_id = "stabilityai/stable-diffusion-2-1"
-# load teh pretained weights to the GPU
-self.pipe = StableDiffusionPipeline.from_pretrained(model_id,
-torch_dtype=torch.float16).to("cuda")
-# intanciate a scheduler to improve efficiency 
-self.pipe.scheduler = DPMSolverMultistepScheduler.from_config(self.pipe.scheduler.config)
-```
-
-To generate an image, we need the cleared prompt and then we call the pipeline to create it. The number of inference steps can be modified based on what you need. 
-
-```py
-# Generate the image
-self.image = self.pipe(prompt=prompt, num_inference_steps=32).images[0]
 ```
 
 ## Conclusion
