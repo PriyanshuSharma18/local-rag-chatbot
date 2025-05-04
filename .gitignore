@@ -1,4 +1,6 @@
 venv
+rag_env/
+
 
 __pycache__
 
