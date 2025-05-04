@@ -15,3 +15,13 @@ __pycache__/
 *.exe
 *.zip
 *.whl
+# Ignore virtual environments and large binary files
+rag_env/
+__pycache__/
+*.pyc
+*.pyd
+*.dll
+*.lib
+*.exe
+*.zip
+*.whl
