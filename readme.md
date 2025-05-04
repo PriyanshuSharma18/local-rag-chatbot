@@ -2,7 +2,7 @@
 ## Introduction
 The rapid advancement of artificial intelligence (AI) has led to the development of various chatbots that can converse with humans. However, most existing chatbots are limited in their capabilities, only able to answer questions or provide information within a specific domain or cost money to use. In this article, we will show you how to build an AI chatbot that not only answers questions but also generates images using the stable diffusion model and provides a RAG module to question you documents.
 
-𝐃𝐞𝐦𝐨 𝐕𝐢𝐝𝐞𝐨: 𝐡𝐭𝐭𝐩𝐬://𝐝𝐫𝐢𝐯𝐞.𝐠𝐨𝐨𝐠𝐥𝐞.𝐜𝐨𝐦/𝐟𝐢𝐥𝐞/𝐝/𝟏𝐩𝟑𝐱𝐃𝐒𝐔𝐱𝐢𝐰𝐌𝐬𝐌𝐞𝐔𝐳𝐗𝐊𝐭𝐖_𝐬𝐳𝐡𝐤𝟖𝐤𝟏𝟕𝐈𝐟𝐀𝐓/𝐯𝐢𝐞𝐰?𝐮𝐬𝐩=𝐬𝐡𝐚𝐫𝐢𝐧𝐠
+𝐃𝐞𝐦𝐨 𝐕𝐢𝐝𝐞𝐨: [𝐡𝐭𝐭𝐩𝐬://𝐝𝐫𝐢𝐯𝐞.𝐠𝐨𝐨𝐠𝐥𝐞.𝐜𝐨𝐦/𝐟𝐢𝐥𝐞/𝐝/𝟏𝐩𝟑𝐱𝐃𝐒𝐔𝐱𝐢𝐰𝐌𝐬𝐌𝐞𝐔𝐳𝐗𝐊𝐭𝐖_𝐬𝐳𝐡𝐤𝟖𝐤𝟏𝟕𝐈𝐟𝐀𝐓/𝐯𝐢𝐞𝐰?𝐮𝐬𝐩=𝐬𝐡𝐚𝐫𝐢𝐧𝐠](https://drive.google.com/file/d/1p3xDSUxiwMsMeUzXKtW_szhk8k17IfAT/view?usp=sharing)
 
 
 ![Screenshot 2025-05-04 200945](https://github.com/user-attachments/assets/283eec65-5ca2-4db8-98a7-497efbff8dcd)
