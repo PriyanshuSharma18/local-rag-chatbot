@@ -5,3 +5,13 @@ __pycache__
 data
 
 vec_db
+rag_env/
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.dll
+*.lib
+*.exe
+*.zip
+*.whl
